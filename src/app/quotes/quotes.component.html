@@ -1,3 +1,11 @@
 <div class="container">
+  <div class="row">
     <app-quotes-form (addQuote)="addNewQuote($event)"></app-quotes-form>
+  </div>
+  <div class="row" *ngFor = 'let Quote of quotes; let i = index' >
+    <p> {{ Quote.user }} </p>
+    <p> {{ Quote.author }} </p>
+    <p> {{ Quote.quote }} </p>
+    <p> {{ Quote.uploadDate }} </p>
+  </div>
 </div>

@@ -1,19 +1,20 @@
-<div class="container row">
-  <form (ngSubmit)='submitQuote()' #quoteForm= 'ngForm'>
-    <div class="form-group">
-      <input type="text" required lass="form-control" placeholder="Your Username" id="name" [(ngModel)]="newQuote.name" name="name" #name="ngModel" required>
-      {{ newQuote.name }}
-    </div>
-    <div class="form-group">
-      <textarea class="form-control" id="quoteTxt" rows="4" [(ngModel)]="newGoal.quoteTxt" name="description" #description="ngModel" placeholder="Your copy-pasted quote goes here..." required></textarea>
-    </div>
-    <div class="form-group">
-      <input type="text" required class="form-control" placeholder="Author's Name" id="name">
-    </div>
-    <div class="form-group">
-      <label for="complete">Date of submission</label><br>
-      <input type='date' id="complete" required>
-    </div>
-    <button type="button" name="Submit" (click)="shareBtn(true)">Create</button>
-  </form>
+<div class="container">
+  <div class="row">
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+      <div class="form-group">
+        <input type="text" required lass="form-control" placeholder="Your Username" id="name" [(ngModel)]="newQuote.user" name="name" #name="ngModel" required>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="quoteTxt" rows="4" [(ngModel)]="newQuote.quote" name="description" #description="ngModel" placeholder="Your copy-pasted quote goes here..." required></textarea>
+      </div>
+      <div class="form-group">
+        <input type="text" required class="form-control" placeholder="Author's Name" id="name" [(ngModel)]="newQuote.author">
+      </div>
+      <div class="form-group">
+        <label for="complete">Date of submission</label><br>
+        <input type='date' id="complete" required [(ngModel)]="newQuote.uploadDate">
+      </div>
+      <button type="button" name="Submit">Create</button>
+    </form>
+  </div>
 </div>
