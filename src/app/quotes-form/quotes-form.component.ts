@@ -6,9 +6,10 @@ import { Quote } from '../quote';
   templateUrl: './quotes-form.component.html',
   styleUrls: [ './quotes-form.component.css' ]
 })
+
 export class QuotesFormComponent implements OnInit {
 
-  quotes = new Quote( "", "", "", new Date() )
+  quotes = new Quote( "", "", "", new Date() );
 
   @Output() addQuote = new EventEmitter<Quote>();
 
@@ -20,5 +21,4 @@ export class QuotesFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

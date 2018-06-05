@@ -2,10 +2,13 @@
   <div class="row">
     <app-quotes-form (addQuote)="addNewQuote($event)"></app-quotes-form>
   </div>
-  <div class="row" *ngFor = 'let Quote of quotes; let i = index' >
-    <p> {{ Quote.user }} </p>
-    <p> {{ Quote.author }} </p>
-    <p> {{ Quote.quote }} </p>
-    <p> {{ Quote.uploadDate }} </p>
+  <div class="row" *ngFor = 'let Quote of quotes; let i = index'>
+    <blockquote class="blockquote mb-0">
+      <p>"{{ Quote.user }}"</p>
+      <p>By: {{ Quote.author}} </p>
+      <p>Uploaded by: {{ Quote.quote }} </p>
+      <p>Uploaded on: {{ Quote.uploadDate }} </p>
+      <app-quotes-detail [Quote]='Quote' (complete)='deleteQuote($event,i)'></app-quotes-detail>
+    </blockquote>
   </div>
 </div>
