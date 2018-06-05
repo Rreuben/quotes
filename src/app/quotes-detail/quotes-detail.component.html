@@ -1,4 +1,16 @@
-<p>Uploaded {{ Quote.uploadDate | dateCount }} days ago</p>
-<button class="btn btn-danger" (click) = 'quoteDelete(true)'>Delete</button>
-<button class="btn btn-success up" (click) = 'upVote()'>upVote ({{ Quote.upVote }})</button>
-<button class="btn btn-default down" (click) = 'downVote()'>downVote ({{ Quote.downVote }})</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <button class="btn btn-success up" (click) = 'upVote()'>upVote ({{ Quote.upVote }})</button>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-default down" (click) = 'downVote()'>downVote ({{ Quote.downVote }})</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-danger" (click) = 'quoteDelete(true)'>Delete</button>
+    </div>
+  </div>
+    <p>Uploaded {{ Quote.uploadDate | dateCount }} days ago</p>
+</div>
