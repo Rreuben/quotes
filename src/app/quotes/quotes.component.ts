@@ -6,23 +6,32 @@ import { Quote } from '../quote';
   templateUrl: './quotes.component.html',
   styleUrls: ['./quotes.component.css']
 })
+
 export class QuotesComponent implements OnInit {
 
   quotes = [
-    new Quote ( "", "", "", new Date() )
+    new Quote ( "", "", "", 0, 0, new Date() )
   ]
 
   addNewQuote(quote) {
-    let quoteLength = this.quotes.length;
     quote.uploadDate = new Date();
     this.quotes.push(quote);
-    console.log(this.quotes)
-
+    console.log( this.quotes );
   }
+
+  deleteQuote( complete, index ) {
+    if(complete) {
+      this.quotes.splice( index, 1 );
+    }
+  }
+
+  toggleDetails(index){
+   this.quotes[index].showDetails = !this.quotes[index].showDetails;
+  }
+
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }
